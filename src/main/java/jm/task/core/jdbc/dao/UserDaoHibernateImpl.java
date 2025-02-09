@@ -22,14 +22,13 @@ public class UserDaoHibernateImpl implements UserDao {
     private static final String DROP_TABLE_QUERY = "DROP TABLE IF EXISTS users";
     private static final String TRUNCATE_TABLE_QUERY = "TRUNCATE TABLE users";
 
-    public UserDaoHibernateImpl() {
-    }
-
+    public UserDaoHibernateImpl() {}
 
     @Override
     public void createUsersTable() {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = null;
+
             try {
                 transaction = session.beginTransaction();
                 session.createNativeQuery(CREATE_TABLE_QUERY).executeUpdate();
@@ -41,7 +40,6 @@ public class UserDaoHibernateImpl implements UserDao {
             }
         }
     }
-
 
     @Override
     public void dropUsersTable() {
@@ -64,6 +62,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public void saveUser(User user) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = null;
+
             try {
                 transaction = session.beginTransaction();
                 session.save(user);
@@ -126,5 +125,6 @@ public class UserDaoHibernateImpl implements UserDao {
             }
         }
     }
+
 }
 

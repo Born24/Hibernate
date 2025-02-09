@@ -6,7 +6,7 @@ import jm.task.core.jdbc.model.User;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private UserDaoHibernateImpl userDao;
+    private final UserDaoHibernateImpl userDao;
 
     public UserServiceImpl() {
 
@@ -44,5 +44,4 @@ public class UserServiceImpl implements UserService {
         userDao.cleanUsersTable();
 
     }
-
 }
