@@ -1,7 +1,6 @@
 package jm.task.core.jdbc.util;
 
 import org.hibernate.SessionFactory;
-import jm.task.core.jdbc.model.User;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
@@ -15,7 +14,7 @@ public class Util {
 
     private static SessionFactory sessionFactory;
 
-    public static synchronized SessionFactory getSessionFactory() {
+    public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration();
@@ -43,11 +42,6 @@ public class Util {
             }
         }
         return sessionFactory;
-    }
-    public static void shutdown() {
-        if (sessionFactory != null) {
-            sessionFactory.close();
-        }
     }
 }
 
