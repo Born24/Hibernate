@@ -18,7 +18,6 @@ public class UserDaoHibernateImpl implements UserDao {
             "name VARCHAR(50), " +
             "lastName VARCHAR(50), " +
             "age INT)";
-
     private static final String DROP_TABLE_QUERY = "DROP TABLE IF EXISTS users";
     private static final String TRUNCATE_TABLE_QUERY = "TRUNCATE TABLE users";
 
@@ -125,6 +124,5 @@ public class UserDaoHibernateImpl implements UserDao {
             }
         }
     }
-
 }
 
